@@ -4,9 +4,10 @@ import Die from "./dice";
 import { nanoid } from "nanoid";
 import RollButton from "./button";
 import Title from "./title";
+import ReactConfetti from "react-confetti";
 
 export default function App() {
-  const [dice, setDice] = React.useState(generateNewDice());
+  const [dice, setDice] = React.useState(() => generateNewDice());
 
   function generateNewDice() {
     const newDice = [];
@@ -52,6 +53,7 @@ export default function App() {
 
   return (
     <main>
+      {gameWon && <ReactConfetti />}
       <Title />
       <div className="dice-container">{diceElements}</div>
       <RollButton rollDice={rollDice} gameWon={gameWon} />
