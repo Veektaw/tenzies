@@ -3,6 +3,7 @@ import "./App.css";
 import Die from "./dice";
 import { nanoid } from "nanoid";
 import RollButton from "./button";
+import Title from "./title";
 
 export default function App() {
   const [dice, setDice] = React.useState(generateNewDice());
@@ -27,8 +28,18 @@ export default function App() {
     });
   }
 
+  const gameWon =
+    dice.every((die) => die.isHeld) &&
+    dice.every((die) => die.value === dice[0].value);
+
+  console.log(gameWon);
+
   function rollDice() {
-    setDice(generateNewDice());
+    setDice((oldDice) =>
+      oldDice.map((die) =>
+        die.isHeld ? die : { ...die, value: Math.ceil(Math.random() * 6) }
+      )
+    );
   }
   const diceElements = dice.map((diceObject) => (
     <Die
@@ -41,8 +52,9 @@ export default function App() {
 
   return (
     <main>
+      <Title />
       <div className="dice-container">{diceElements}</div>
-      <RollButton rollDice={rollDice} />
+      <RollButton rollDice={rollDice} gameWon={gameWon} />
     </main>
   );
 }
