@@ -8,7 +8,7 @@ import ReactConfetti from "react-confetti";
 
 export default function App() {
   const [dice, setDice] = React.useState(() => generateNewDice());
-  const [timeLeft, setTimeLeft] = React.useState(15);
+  const [timeLeft, setTimeLeft] = React.useState(12);
   const [isActive, setIsActive] = React.useState(false);
   const [hasLost, setHasLost] = React.useState(false);
   const buttonRef = React.useRef(null);
@@ -63,7 +63,7 @@ export default function App() {
   function rollDice() {
     if (hasLost || gameWon) {
       setDice(generateNewDice());
-      setTimeLeft(15);
+      setTimeLeft(12);
       setIsActive(false);
       setHasLost(false);
       return;
