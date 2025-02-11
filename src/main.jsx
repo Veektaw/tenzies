@@ -8,7 +8,7 @@ import ReactConfetti from "react-confetti";
 
 export default function App() {
   const [dice, setDice] = React.useState(() => generateNewDice());
-  const [timeLeft, setTimeLeft] = React.useState(20);
+  const [timeLeft, setTimeLeft] = React.useState(15);
   const [isActive, setIsActive] = React.useState(false);
   const [hasLost, setHasLost] = React.useState(false);
   const buttonRef = React.useRef(null);
