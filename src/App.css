@@ -5,6 +5,7 @@
 body {
   margin: 0;
   background-color: #0b2434;
+  font-family: Inter, sans-serif;
   padding: 25px;
   height: 100vh;
   display: flex;
@@ -36,6 +37,11 @@ main {
   gap: 15px;
 }
 
+button {
+  font-family: Inter, sans-serif;
+  cursor: pointer;
+}
+
 .dice-container button {
   height: 50px;
   width: 50px;
@@ -45,6 +51,17 @@ main {
   background-color: white;
   font-size: 1.75rem;
   font-weight: bold;
-  font-family: Inter;
-  cursor: pointer;
+  
+}
+
+button.roll-dice-button {
+  height: 50px;
+  width: 100px;
+  border: none;
+  border-radius: 6px;
+  background-color: #5035FF;
+  color: white;
+  font-size: 1.2rem;
+  font-family: Inter, sans-serif;
+  margin-top: 20px;
 }
