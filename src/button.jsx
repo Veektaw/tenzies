@@ -1,7 +1,7 @@
-export default function RollButton(props) {
+export default function RollButton({ rollDice, hasLost, gameWon, ref }) {
   return (
-    <button className="roll-dice-button" onClick={props.rollDice}>
-      {props.gameWon ? "New game" : "Roll dice"}
+    <button onClick={rollDice} ref={ref} className="roll-dice-button">
+      {hasLost || gameWon ? "New game" : "Roll dice"}
     </button>
   );
 }
