@@ -62,7 +62,6 @@ button {
   background-color: white;
   font-size: 1.75rem;
   font-weight: bold;
-  text-align: center;
 }
 
 button.roll-dice-button {
@@ -76,7 +75,8 @@ button.roll-dice-button {
   color: white;
   font-size: 1.2rem;
   font-family: Inter, sans-serif;
-  margin-top: 20px;
+  text-align: center;
+  margin-top: 80px;
 }
 
 .sr-only {
